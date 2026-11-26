@@ -3,6 +3,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
+import { DiscussionEmbed } from 'disqus-react';
 import {
   calculateItemTotal,
   calculateScaledPacks,
@@ -53,6 +54,27 @@ const INTENT_TILES: { id: IntentTab; label: string; sublabel: string }[] = [
   { id: 'vouchers', label: 'VOUCHERS', sublabel: 'Claim & save' },
   { id: 'wine-list', label: 'WINE LIST', sublabel: 'Dinner pairings' },
 ];
+
+class DisqusErrorBoundary extends React.Component<
+  { children: React.ReactNode },
+  { hasError: boolean }
+> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return null;
+    }
+    return this.props.children;
+  }
+}
 
 export default function App() {
   const [activePage, setActivePage] = useState<ActivePage>('home');
@@ -215,6 +237,16 @@ export default function App() {
     fulfillmentMode === 'delivery'
       ? `${selectedSlot.dayLabel}, ${selectedSlot.window}`
       : `Collect: ${selectedOutlet.name.replace('FairPrice ', '')}`;
+
+  const disqusConfig = useMemo(
+    () => ({
+      url: `${window.location.origin}${window.location.pathname}`,
+      identifier: 'fairprice-enhanced-v2-main',
+      title: 'FairPrice Online Singapore Discussion Forum',
+      language: 'en',
+    }),
+    []
+  );
 
   const handleAddToCart = (product: Product) => {
     setCart((prev) => ({ ...prev, [product.id]: (prev[product.id] || 0) + 1 }));
@@ -394,8 +426,13 @@ export default function App() {
       />
 
       <main className="flex-1">
-        {activePage === 'home' && (
-          <div className="max-w-[1280px] mx-auto px-4 lg:px-6 pt-5 space-y-6">
+        <div
+          className={
+            activePage === 'home'
+              ? 'max-w-[1280px] mx-auto px-4 lg:px-6 pt-5 space-y-6'
+              : 'hidden'
+          }
+        >
             {/* 3. FOCUSED ADVERTS CAROUSEL BANNER (No Scattered Competing Promos) */}
             <section aria-label="Featured Adverts">
               <div className="relative rounded-2xl overflow-hidden bg-[#003876] h-[230px] sm:h-[275px] lg:h-[300px]">
@@ -579,8 +616,14 @@ export default function App() {
                 />
               )}
             </section>
-          </div>
-        )}
+
+            <DisqusErrorBoundary>
+              <DiscussionEmbed
+                shortname='fairprice-enhanced'
+                config={disqusConfig}
+              />
+            </DisqusErrorBoundary>
+        </div>
 
         {(activePage === 'category' || activePage === 'search') && (
           <CatalogView
