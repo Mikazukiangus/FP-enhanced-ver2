@@ -65,13 +65,13 @@ export const TopCategoriesBar: React.FC<TopCategoriesBarProps> = ({
                 key={cat.id}
                 type="button"
                 onClick={() => onSelectCategory(cat)}
-                className="group flex flex-col items-center text-center w-[76px] sm:w-[88px] shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E] rounded-lg py-1"
+                className="group flex flex-col items-center text-center w-[76px] sm:w-[88px] shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004B93] rounded-lg py-1"
               >
                 <div
                   className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-150 ${
                     isSelected
-                      ? 'bg-[#0F766E] text-white ring-2 ring-[#0F766E]/30 shadow-sm'
-                      : `${cat.accentBg} ${cat.accentText} bg-white border border-[#E5E8EE] group-hover:border-[#0F766E] group-hover:-translate-y-0.5`
+                      ? 'bg-[#004B93] text-white ring-2 ring-[#004B93]/30 shadow-sm'
+                      : `${cat.accentBg} ${cat.accentText} bg-white border border-[#E5E8EE] group-hover:border-[#004B93] group-hover:-translate-y-0.5`
                   }`}
                 >
                   <Icon className="w-5 h-5" />
@@ -79,8 +79,8 @@ export const TopCategoriesBar: React.FC<TopCategoriesBarProps> = ({
                 <span
                   className={`mt-1.5 text-[11px] leading-tight line-clamp-2 transition-colors ${
                     isSelected
-                      ? 'font-bold text-[#0F766E]'
-                      : 'font-medium text-[#374151] group-hover:text-[#0F766E]'
+                      ? 'font-bold text-[#004B93]'
+                      : 'font-medium text-[#374151] group-hover:text-[#004B93]'
                   }`}
                 >
                   {cat.shortName}

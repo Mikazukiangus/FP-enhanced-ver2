@@ -102,7 +102,7 @@ export interface VoucherItem {
 export interface StoreOutlet {
   id: string;
   name: string;
-  format: 'Pantry Lane Superstore' | 'Pantry Lane Select' | 'Pantry Lane' | 'Pantry Lane Express';
+  format: 'FairPrice Xtra' | 'FairPrice Finest' | 'FairPrice' | 'FairPrice Express';
   address: string;
   postalCode: string;
   hours: string;
@@ -181,8 +181,8 @@ export const TOP_CATEGORIES: Category[] = [
     name: 'Health & Wellness',
     shortName: 'Healthier Choice',
     subcategories: ['Healthier Choice', 'Wholegrains', 'No Sugar Drinks'],
-    accentBg: 'bg-[#F0FDFA]',
-    accentText: 'text-[#0F766E]',
+    accentBg: 'bg-[#EFF5FC]',
+    accentText: 'text-[#004B93]',
     iconKey: 'heart-pulse',
     filterType: 'dietary',
     dietaryTag: 'Healthier Choice',
@@ -799,8 +799,8 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'fp-tissue-10s',
-    name: 'Pantry Lane Soft 3-Ply Bathroom Tissue Rolls',
-    brand: 'Pantry Lane',
+    name: 'FairPrice Soft 3-Ply Bathroom Tissue Rolls',
+    brand: 'FairPrice',
     category: 'household',
     subcategory: 'Paper & Bathroom Tissue',
     price: 5.95,
@@ -1298,8 +1298,8 @@ export const DELIVERY_SLOTS: DeliverySlot[] = [
 export const STORE_OUTLETS: StoreOutlet[] = [
   {
     id: 'st-vivo',
-    name: 'Pantry Lane Superstore @ VivoCity',
-    format: 'Pantry Lane Superstore',
+    name: 'FairPrice Xtra @ VivoCity',
+    format: 'FairPrice Xtra',
     address: '1 HarbourFront Walk, #B2-23 VivoCity',
     postalCode: '098585',
     hours: '8:00 AM – 11:00 PM Daily',
@@ -1308,8 +1308,8 @@ export const STORE_OUTLETS: StoreOutlet[] = [
   },
   {
     id: 'st-tripleone',
-    name: 'Pantry Lane Select @ 111 Somerset',
-    format: 'Pantry Lane Select',
+    name: 'FairPrice Finest @ 111 Somerset',
+    format: 'FairPrice Finest',
     address: '111 Somerset Road, #01-01 TripleOne Somerset',
     postalCode: '238164',
     hours: '8:00 AM – 11:00 PM Daily',
@@ -1318,8 +1318,8 @@ export const STORE_OUTLETS: StoreOutlet[] = [
   },
   {
     id: 'st-amk',
-    name: 'Pantry Lane Superstore @ AMK Hub',
-    format: 'Pantry Lane Superstore',
+    name: 'FairPrice Xtra @ AMK Hub',
+    format: 'FairPrice Xtra',
     address: '53 Ang Mo Kio Ave 3, #B2-40 AMK Hub',
     postalCode: '569933',
     hours: 'Open 24 Hours',
@@ -1328,8 +1328,8 @@ export const STORE_OUTLETS: StoreOutlet[] = [
   },
   {
     id: 'st-jem',
-    name: 'Pantry Lane Superstore @ Jem',
-    format: 'Pantry Lane Superstore',
+    name: 'FairPrice Xtra @ Jem',
+    format: 'FairPrice Xtra',
     address: '50 Jurong Gateway Road, #B1-21 Jem',
     postalCode: '608549',
     hours: '8:00 AM – 11:00 PM Daily',
@@ -1338,8 +1338,8 @@ export const STORE_OUTLETS: StoreOutlet[] = [
   },
   {
     id: 'st-tampines',
-    name: 'Pantry Lane @ Tampines Mall',
-    format: 'Pantry Lane',
+    name: 'FairPrice @ Tampines Mall',
+    format: 'FairPrice',
     address: '4 Tampines Central 5, #B1-12 Tampines Mall',
     postalCode: '529510',
     hours: '8:00 AM – 10:30 PM Daily',

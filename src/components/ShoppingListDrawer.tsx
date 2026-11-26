@@ -122,7 +122,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
 
   const handleShareList = () => {
     const lines = [
-      `My Pantry Lane Shopping List (${mealPlan.length} planned meals):`,
+      `My FairPrice Shopping List (${mealPlan.length} planned meals):`,
       ...aggregatedList.needToBuy.map(
         (i) => `- ${i.product.name} x${i.packs} ($${(i.product.price * i.packs).toFixed(2)})`
       ),
@@ -148,7 +148,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
         {/* Header */}
         <div className="px-5 py-4 border-b border-[#E5E8EE] flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <ClipboardList className="w-5 h-5 text-[#0F766E]" />
+            <ClipboardList className="w-5 h-5 text-[#004B93]" />
             <h2 className="text-base font-extrabold text-[#1A1D23]">
               Smart Shopping List &amp; Pantry
             </h2>
@@ -177,7 +177,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
                 onClick={() => setTab(t.id as typeof tab)}
                 className={`py-1.5 rounded-md text-xs font-bold transition-colors whitespace-nowrap ${
                   tab === t.id
-                    ? 'bg-white text-[#134E4A] shadow-xs'
+                    ? 'bg-white text-[#003876] shadow-xs'
                     : 'text-[#5A6270] hover:text-[#1A1D23]'
                 }`}
               >
@@ -201,7 +201,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
                     <button
                       type="button"
                       onClick={handleShareList}
-                      className="text-xs font-bold text-[#0F766E] hover:underline flex items-center gap-1"
+                      className="text-xs font-bold text-[#004B93] hover:underline flex items-center gap-1"
                     >
                       <Share2 className="w-3.5 h-3.5" />
                       <span>Share List</span>
@@ -276,7 +276,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
                               type="button"
                               onClick={() => onRemoveMeal(pm.recipeId)}
                               aria-label={`Remove ${rec.title} from meal plan`}
-                              className="p-1 text-[#9CA3AF] hover:text-[#EA580C]"
+                              className="p-1 text-[#9CA3AF] hover:text-[#E31837]"
                             >
                               <Trash2 className="w-3.5 h-3.5" />
                             </button>
@@ -291,7 +291,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
               {/* Aggregated Need to Buy List */}
               {aggregatedList.needToBuy.length > 0 && (
                 <div>
-                  <h3 className="text-xs font-extrabold text-[#0F766E] mb-2">
+                  <h3 className="text-xs font-extrabold text-[#004B93] mb-2">
                     Need to Buy ({aggregatedList.needToBuy.length} items)
                   </h3>
                   <div className="divide-y divide-[#EEF0F3] border border-[#E5E8EE] rounded-xl overflow-hidden">
@@ -348,7 +348,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
                         <button
                           type="button"
                           onClick={() => onTogglePantry(item.product.id)}
-                          className="text-[11px] font-bold text-[#0F766E] hover:underline whitespace-nowrap shrink-0"
+                          className="text-[11px] font-bold text-[#004B93] hover:underline whitespace-nowrap shrink-0"
                         >
                           Buy instead
                         </button>
@@ -371,7 +371,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
                 value={pantrySearch}
                 onChange={(e) => setPantrySearch(e.target.value)}
                 placeholder="Search any grocery item to mark as already at home..."
-                className="w-full h-9 px-3 rounded-lg border border-[#D4D9E2] text-xs outline-none focus:border-[#0F766E]"
+                className="w-full h-9 px-3 rounded-lg border border-[#D4D9E2] text-xs outline-none focus:border-[#004B93]"
               />
 
               <div className="divide-y divide-[#EEF0F3] border border-[#E5E8EE] rounded-xl overflow-hidden">
@@ -448,7 +448,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
                         <button
                           type="button"
                           onClick={() => onAddSingleProduct(prod)}
-                          className="px-2.5 py-1.5 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-[11px] font-bold"
+                          className="px-2.5 py-1.5 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-[11px] font-bold"
                         >
                           Add
                         </button>
@@ -456,7 +456,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
                           type="button"
                           onClick={() => onToggleWishlist(prod.id)}
                           aria-label={`Remove ${prod.name} from saved`}
-                          className="p-1 text-[#9CA3AF] hover:text-[#EA580C]"
+                          className="p-1 text-[#9CA3AF] hover:text-[#E31837]"
                         >
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
@@ -476,7 +476,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
               <span className="text-xs font-semibold text-[#5A6270]">
                 Missing Ingredients Total ({aggregatedList.needToBuy.length} items)
               </span>
-              <span className="text-lg font-extrabold text-[#134E4A] tabular-nums">
+              <span className="text-lg font-extrabold text-[#003876] tabular-nums">
                 ${aggregatedList.totalNeededCost.toFixed(2)}
               </span>
             </div>
@@ -492,7 +492,7 @@ export const ShoppingListDrawer: React.FC<ShoppingListDrawerProps> = ({
                 );
                 onClose();
               }}
-              className="w-full h-11 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors"
+              className="w-full h-11 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors"
             >
               <ShoppingCart className="w-4 h-4" />
               <span>Add All Needed Items to Cart</span>

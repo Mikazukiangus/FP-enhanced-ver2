@@ -84,7 +84,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
           {/* Right Contiguous Purchase Module */}
           <div className="md:col-span-7 flex flex-col">
             <div className="flex items-center gap-2 text-xs text-[#5A6270]">
-              <span className="font-bold text-[#0F766E]">{product.brand}</span>
+              <span className="font-bold text-[#004B93]">{product.brand}</span>
               <span aria-hidden="true">·</span>
               <span>{product.subcategory}</span>
               <span aria-hidden="true">·</span>
@@ -117,7 +117,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                   </span>
                 )}
                 {savings && (
-                  <span className="text-xs font-bold text-[#C2410C] tabular-nums">
+                  <span className="text-xs font-bold text-[#C8102E] tabular-nums">
                     Save ${savings}
                   </span>
                 )}
@@ -126,7 +126,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {product.packSize} · {product.unitPriceText}
               </div>
               {product.bundle && (
-                <div className="mt-2 pt-2 border-t border-[#E6E8EC] text-xs font-bold text-[#0F766E]">
+                <div className="mt-2 pt-2 border-t border-[#E6E8EC] text-xs font-bold text-[#004B93]">
                   Bundle Offer: {product.bundle.label} (Applied automatically in cart)
                 </div>
               )}
@@ -138,28 +138,28 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 <button
                   type="button"
                   onClick={() => onAdd(product)}
-                  className="flex-1 h-11 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-sm font-bold transition-colors"
+                  className="flex-1 h-11 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-sm font-bold transition-colors"
                 >
                   Add to cart
                 </button>
               ) : (
-                <div className="flex-1 h-11 rounded-lg border-2 border-[#0F766E] bg-[#F0FDFA] flex items-center justify-between overflow-hidden">
+                <div className="flex-1 h-11 rounded-lg border-2 border-[#004B93] bg-[#EFF5FC] flex items-center justify-between overflow-hidden">
                   <button
                     type="button"
                     onClick={() => onUpdateQty(product.id, -1)}
                     aria-label="Decrease quantity"
-                    className="w-12 h-full flex items-center justify-center text-[#0F766E] hover:bg-[#CCFBF1]"
+                    className="w-12 h-full flex items-center justify-center text-[#004B93] hover:bg-[#DCEAF8]"
                   >
                     <Minus className="w-4 h-4 stroke-[2.5]" />
                   </button>
-                  <span className="text-base font-extrabold text-[#134E4A] tabular-nums">
+                  <span className="text-base font-extrabold text-[#003876] tabular-nums">
                     {quantity} in cart
                   </span>
                   <button
                     type="button"
                     onClick={() => onUpdateQty(product.id, 1)}
                     aria-label="Increase quantity"
-                    className="w-12 h-full flex items-center justify-center text-[#0F766E] hover:bg-[#CCFBF1]"
+                    className="w-12 h-full flex items-center justify-center text-[#004B93] hover:bg-[#DCEAF8]"
                   >
                     <Plus className="w-4 h-4 stroke-[2.5]" />
                   </button>
@@ -171,8 +171,8 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 onClick={() => onToggleWishlist(product.id)}
                 className={`h-11 px-4 rounded-lg border text-xs font-bold flex items-center gap-2 transition-colors ${
                   isWishlisted
-                    ? 'border-[#EA580C] bg-[#FFF4EC] text-[#EA580C]'
-                    : 'border-[#D1D5DB] text-[#374151] hover:border-[#0F766E]'
+                    ? 'border-[#E31837] bg-[#FEF2F4] text-[#E31837]'
+                    : 'border-[#D1D5DB] text-[#374151] hover:border-[#004B93]'
                 }`}
               >
                 <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-current' : ''}`} />
@@ -277,7 +277,7 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
             onClick={() => setMode('delivery')}
             className={`py-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 transition-colors ${
               mode === 'delivery'
-                ? 'bg-white text-[#0F766E] shadow-sm'
+                ? 'bg-white text-[#004B93] shadow-sm'
                 : 'text-[#5A6270] hover:text-[#1A1D23]'
             }`}
           >
@@ -289,7 +289,7 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
             onClick={() => setMode('collect')}
             className={`py-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 transition-colors ${
               mode === 'collect'
-                ? 'bg-white text-[#0F766E] shadow-sm'
+                ? 'bg-white text-[#004B93] shadow-sm'
                 : 'text-[#5A6270] hover:text-[#1A1D23]'
             }`}
           >
@@ -310,9 +310,9 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
                 value={code}
                 onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))}
                 placeholder="e.g. 238801"
-                className="w-full h-10 px-3.5 rounded-lg border border-[#D1D5DB] focus:border-[#0F766E] outline-none text-sm font-semibold tabular-nums"
+                className="w-full h-10 px-3.5 rounded-lg border border-[#D1D5DB] focus:border-[#004B93] outline-none text-sm font-semibold tabular-nums"
               />
-              {error && <p className="text-xs text-[#C2410C] mt-1">{error}</p>}
+              {error && <p className="text-xs text-[#C8102E] mt-1">{error}</p>}
 
               <div className="flex flex-wrap gap-1.5 mt-2.5">
                 {SINGAPORE_AREAS.map((area) => (
@@ -325,8 +325,8 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
                     }}
                     className={`px-2.5 py-1 rounded-md text-xs border transition-colors ${
                       code === area.postalCode
-                        ? 'border-[#0F766E] bg-[#F0FDFA] text-[#0F766E] font-bold'
-                        : 'border-[#E2E6EC] text-[#4B5563] hover:border-[#0F766E]'
+                        ? 'border-[#004B93] bg-[#EFF5FC] text-[#004B93] font-bold'
+                        : 'border-[#E2E6EC] text-[#4B5563] hover:border-[#004B93]'
                     }`}
                   >
                     {area.postalCode} · {area.label.split(' · ')[0]}
@@ -347,8 +347,8 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
                     onClick={() => setSlot(s)}
                     className={`p-3 rounded-xl border text-left transition-all ${
                       slot.id === s.id
-                        ? 'border-[#0F766E] bg-[#F0FDFA]'
-                        : 'border-[#E2E6EC] hover:border-[#5EEAD4]'
+                        ? 'border-[#004B93] bg-[#EFF5FC]'
+                        : 'border-[#E2E6EC] hover:border-[#93C5FD]'
                     }`}
                   >
                     <div className="flex items-center justify-between text-xs">
@@ -358,7 +358,7 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
                       <span
                         className={
                           s.status === 'Filling Fast'
-                            ? 'text-[#C2410C] font-semibold'
+                            ? 'text-[#C8102E] font-semibold'
                             : 'text-[#15803D] font-semibold'
                         }
                       >
@@ -377,7 +377,7 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
         ) : (
           <div className="mt-5 space-y-2.5">
             <p className="text-xs text-[#5A6270]">
-              Order online and pick up from your nearest Pantry Lane Superstore or Pantry Lane Select outlet with $0 collection fee.
+              Order online and pick up from your nearest FairPrice Xtra or FairPrice Finest outlet with $0 collection fee.
             </p>
             {STORE_OUTLETS.map((st) => (
               <button
@@ -386,13 +386,13 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
                 onClick={() => setOutlet(st)}
                 className={`w-full p-3.5 rounded-xl border text-left transition-all ${
                   outlet.id === st.id
-                    ? 'border-[#0F766E] bg-[#F0FDFA]'
-                    : 'border-[#E2E6EC] hover:border-[#5EEAD4]'
+                    ? 'border-[#004B93] bg-[#EFF5FC]'
+                    : 'border-[#E2E6EC] hover:border-[#93C5FD]'
                 }`}
               >
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold text-[#1A1D23]">{st.name}</span>
-                  <span className="text-xs font-semibold text-[#0F766E] tabular-nums">
+                  <span className="text-xs font-semibold text-[#004B93] tabular-nums">
                     {st.distanceKm} km
                   </span>
                 </div>
@@ -416,7 +416,7 @@ export const DeliveryModal: React.FC<DeliveryModalProps> = ({
           <button
             type="button"
             onClick={handleConfirm}
-            className="px-5 py-2 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-xs font-bold transition-colors"
+            className="px-5 py-2 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-xs font-bold transition-colors"
           >
             Confirm Slot
           </button>
@@ -481,13 +481,13 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Pantry Lane Checkout"
+        aria-label="FairPrice Checkout"
         className="relative bg-white rounded-2xl max-w-[580px] w-full max-h-[90vh] overflow-y-auto shadow-2xl z-10 p-6"
       >
         {!orderId ? (
           <form onSubmit={handlePlaceOrder}>
             <div className="flex items-center justify-between pb-4 border-b border-[#E6E8EC]">
-              <h2 className="text-lg font-extrabold text-[#1A1D23]">Pantry Lane Checkout <span className="ml-1 text-xs font-semibold text-[#5A6270]">(demo, no payment is taken)</span></h2>
+              <h2 className="text-lg font-extrabold text-[#1A1D23]">FairPrice Checkout <span className="ml-1 text-xs font-semibold text-[#5A6270]">(demo, no payment is taken)</span></h2>
               <button
                 type="button"
                 onClick={handleDone}
@@ -503,8 +503,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#5A6270]">
                 1. Delivery Details
               </h3>
-              <div className="p-3 rounded-lg bg-[#F0FDFA] border border-[#CCFBF1] text-xs text-[#134E4A] flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-[#0F766E] shrink-0" />
+              <div className="p-3 rounded-lg bg-[#EFF5FC] border border-[#C7DCF2] text-xs text-[#003876] flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-[#004B93] shrink-0" />
                 <span>
                   Singapore <strong className="tabular-nums">{postalCode}</strong> · {deliverySummary}
                 </span>
@@ -519,7 +519,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full h-9 px-3 rounded-lg border border-[#D1D5DB] text-sm outline-none focus:border-[#0F766E]"
+                    className="w-full h-9 px-3 rounded-lg border border-[#D1D5DB] text-sm outline-none focus:border-[#004B93]"
                   />
                 </div>
                 <div>
@@ -530,7 +530,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full h-9 px-3 rounded-lg border border-[#D1D5DB] text-sm outline-none focus:border-[#0F766E] tabular-nums"
+                    className="w-full h-9 px-3 rounded-lg border border-[#D1D5DB] text-sm outline-none focus:border-[#004B93] tabular-nums"
                   />
                 </div>
               </div>
@@ -543,7 +543,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   required
                   value={unit}
                   onChange={(e) => setUnit(e.target.value)}
-                  className="w-full h-9 px-3 rounded-lg border border-[#D1D5DB] text-sm outline-none focus:border-[#0F766E]"
+                  className="w-full h-9 px-3 rounded-lg border border-[#D1D5DB] text-sm outline-none focus:border-[#004B93]"
                 />
               </div>
             </div>
@@ -566,12 +566,12 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                     onClick={() => setPaymentMethod(pm.id as typeof paymentMethod)}
                     className={`p-3 rounded-xl border text-left transition-colors ${
                       paymentMethod === pm.id
-                        ? 'border-[#0F766E] bg-[#F0FDFA]'
-                        : 'border-[#E2E6EC] hover:border-[#5EEAD4]'
+                        ? 'border-[#004B93] bg-[#EFF5FC]'
+                        : 'border-[#E2E6EC] hover:border-[#93C5FD]'
                     }`}
                   >
                     <div className="flex items-center gap-1.5 text-xs font-bold text-[#1A1D23]">
-                      <CreditCard className="w-3.5 h-3.5 text-[#0F766E]" />
+                      <CreditCard className="w-3.5 h-3.5 text-[#004B93]" />
                       <span>{pm.label}</span>
                     </div>
                     <div className="text-[11px] text-[#5A6270] mt-0.5">{pm.sub}</div>
@@ -594,7 +594,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               )}
               {summary.linkpointsDiscount > 0 && (
                 <div className="flex justify-between text-[#15803D]">
-                  <span>Lane Points Redeemed</span>
+                  <span>Linkpoints Redeemed</span>
                   <span className="font-semibold tabular-nums">-${summary.linkpointsDiscount.toFixed(2)}</span>
                 </div>
               )}
@@ -604,7 +604,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   {summary.deliveryFee === 0 ? 'FREE' : `$${summary.deliveryFee.toFixed(2)}`}
                 </span>
               </div>
-              <div className="pt-2 border-t border-[#E6E8EC] flex justify-between items-baseline text-sm font-extrabold text-[#134E4A]">
+              <div className="pt-2 border-t border-[#E6E8EC] flex justify-between items-baseline text-sm font-extrabold text-[#003876]">
                 <span>Total Payable</span>
                 <span className="text-lg tabular-nums">${summary.total.toFixed(2)}</span>
               </div>
@@ -612,7 +612,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 
             <button
               type="submit"
-              className="mt-5 w-full h-11 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-sm font-bold transition-colors"
+              className="mt-5 w-full h-11 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-sm font-bold transition-colors"
             >
               Place Order · ${summary.total.toFixed(2)}
             </button>
@@ -639,14 +639,14 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               </div>
               <div className="flex justify-between">
                 <span className="text-[#5A6270]">Amount Paid</span>
-                <span className="font-bold text-[#134E4A] tabular-nums">
+                <span className="font-bold text-[#003876] tabular-nums">
                   ${summary.total.toFixed(2)}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-[#5A6270]">Lane Points Earned</span>
+                <span className="text-[#5A6270]">Linkpoints Earned</span>
                 <span className="font-bold text-[#15803D] tabular-nums">
-                  +{summary.linkpointsEarned} Lane Points
+                  +{summary.linkpointsEarned} Linkpoints
                 </span>
               </div>
             </div>
@@ -654,7 +654,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
             <button
               type="button"
               onClick={handleDone}
-              className="mt-6 px-6 py-2.5 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-sm font-bold"
+              className="mt-6 px-6 py-2.5 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-sm font-bold"
             >
               Continue Shopping
             </button>
@@ -693,13 +693,13 @@ export const StoreLocatorModal: React.FC<StoreLocatorModalProps> = ({
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Pantry Lane Store Locator"
+        aria-label="FairPrice Store Locator"
         className="relative bg-white rounded-2xl max-w-[600px] w-full max-h-[85vh] overflow-y-auto shadow-2xl z-10 p-6"
       >
         <div className="flex items-center justify-between pb-4 border-b border-[#E6E8EC]">
           <div>
-            <h2 className="text-lg font-extrabold text-[#1A1D23]">Pantry Lane Store Locator</h2>
-            <p className="text-xs text-[#5A6270]">Find Pantry Lane Superstore, Select &amp; Click &amp; Collect outlets across Singapore</p>
+            <h2 className="text-lg font-extrabold text-[#1A1D23]">FairPrice Store Locator</h2>
+            <p className="text-xs text-[#5A6270]">Find FairPrice Xtra, Finest &amp; Click &amp; Collect outlets across Singapore</p>
           </div>
           <button
             type="button"
@@ -716,19 +716,19 @@ export const StoreLocatorModal: React.FC<StoreLocatorModalProps> = ({
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
           placeholder="Search by mall, road, or postal code (e.g. VivoCity, Tampines, 238164)..."
-          className="mt-4 w-full h-10 px-3.5 rounded-lg border border-[#D1D5DB] text-sm outline-none focus:border-[#0F766E]"
+          className="mt-4 w-full h-10 px-3.5 rounded-lg border border-[#D1D5DB] text-sm outline-none focus:border-[#004B93]"
         />
 
         <div className="mt-4 space-y-3">
           {filtered.map((st) => (
             <div
               key={st.id}
-              className="p-4 rounded-xl border border-[#E6E8EC] hover:border-[#99E6D8] transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+              className="p-4 rounded-xl border border-[#E6E8EC] hover:border-[#93C5FD] transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-3"
             >
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-bold text-[#1A1D23]">{st.name}</span>
-                  <span className="text-[11px] font-semibold text-[#0F766E] tabular-nums">
+                  <span className="text-[11px] font-semibold text-[#004B93] tabular-nums">
                     {st.distanceKm} km
                   </span>
                 </div>
@@ -743,7 +743,7 @@ export const StoreLocatorModal: React.FC<StoreLocatorModalProps> = ({
                   onSelectCollectOutlet(st);
                   onClose();
                 }}
-                className="px-3.5 py-2 rounded-lg bg-[#F0FDFA] hover:bg-[#0F766E] text-[#0F766E] hover:text-white text-xs font-bold transition-colors whitespace-nowrap shrink-0"
+                className="px-3.5 py-2 rounded-lg bg-[#EFF5FC] hover:bg-[#004B93] text-[#004B93] hover:text-white text-xs font-bold transition-colors whitespace-nowrap shrink-0"
               >
                 Click &amp; Collect Here
               </button>
@@ -785,20 +785,20 @@ export const AccountModal: React.FC<AccountModalProps> = ({
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Pantry Lane Account and Lane Rewards"
+        aria-label="FairPrice Account and Link Rewards"
         className="relative bg-white rounded-2xl max-w-[480px] w-full shadow-2xl z-10 p-6"
       >
         <div className="flex items-center justify-between pb-4 border-b border-[#E6E8EC]">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-full bg-[#E6FAF6] text-[#0F766E] flex items-center justify-center">
+            <div className="w-9 h-9 rounded-full bg-[#EBF3FB] text-[#004B93] flex items-center justify-center">
               <User className="w-5 h-5" />
             </div>
             <div>
               <h2 className="text-base font-extrabold text-[#1A1D23]">
-                {isSignedIn ? 'Alex Tan' : 'Pantry Lane Account'}
+                {isSignedIn ? 'Alex Tan' : 'FairPrice Account'}
               </h2>
               <p className="text-xs text-[#5A6270]">
-                {isSignedIn ? 'Lane Rewards Member' : 'Sign in to earn & redeem Lane Points'}
+                {isSignedIn ? 'Link Rewards Member' : 'Sign in to earn & redeem Linkpoints'}
               </p>
             </div>
           </div>
@@ -814,9 +814,9 @@ export const AccountModal: React.FC<AccountModalProps> = ({
 
         {isSignedIn ? (
           <div className="mt-5 space-y-4">
-            <div className="p-4 rounded-xl bg-gradient-to-r from-[#134E4A] to-[#0F766E] text-white flex items-center justify-between">
+            <div className="p-4 rounded-xl bg-gradient-to-r from-[#003876] to-[#004B93] text-white flex items-center justify-between">
               <div>
-                <div className="text-xs text-white/80 font-medium">Available Lane Points</div>
+                <div className="text-xs text-white/80 font-medium">Available Linkpoints</div>
                 <div className="text-2xl font-extrabold tabular-nums mt-0.5">
                   {linkpoints.toLocaleString()} pts
                 </div>
@@ -824,18 +824,18 @@ export const AccountModal: React.FC<AccountModalProps> = ({
                   Worth ${(linkpoints / 100).toFixed(2)} in grocery offsets
                 </div>
               </div>
-              <Award className="w-10 h-10 text-[#5EEAD4]" />
+              <Award className="w-10 h-10 text-[#93C5FD]" />
             </div>
 
             <div className="p-4 rounded-xl border border-[#E6E8EC] flex items-center justify-between gap-3">
               <div>
                 <div className="text-sm font-bold text-[#1A1D23] flex items-center gap-1.5">
-                  <ShieldCheck className="w-4 h-4 text-[#0F766E]" />
-                  <span>Lane Plus Membership</span>
+                  <ShieldCheck className="w-4 h-4 text-[#004B93]" />
+                  <span>Digital Club Membership</span>
                 </div>
                 <div className="text-xs text-[#5A6270] mt-0.5">
                   {isDigitalClub
-                    ? 'Active — $0 delivery fees & 2x Lane Points enabled'
+                    ? 'Active — $0 delivery fees & 2x Linkpoints enabled'
                     : 'Unlock $0 delivery fees & bonus monthly vouchers'}
                 </div>
               </div>
@@ -845,7 +845,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap ${
                   isDigitalClub
                     ? 'bg-[#ECFDF3] text-[#15803D]'
-                    : 'bg-[#0F766E] text-white hover:bg-[#134E4A]'
+                    : 'bg-[#004B93] text-white hover:bg-[#003876]'
                 }`}
               >
                 {isDigitalClub ? 'Active' : 'Activate Free Trial'}
@@ -868,7 +868,7 @@ export const AccountModal: React.FC<AccountModalProps> = ({
                       className="p-3 rounded-lg border border-[#E6E8EC] flex items-center justify-between text-xs"
                     >
                       <div className="flex items-center gap-2">
-                        <Package className="w-4 h-4 text-[#0F766E]" />
+                        <Package className="w-4 h-4 text-[#004B93]" />
                         <div>
                           <div className="font-bold text-[#1A1D23] tabular-nums">#{ord.id}</div>
                           <div className="text-[#5A6270]">{ord.date}</div>
@@ -894,14 +894,14 @@ export const AccountModal: React.FC<AccountModalProps> = ({
         ) : (
           <div className="mt-5 text-center space-y-4">
             <p className="text-sm text-[#5A6270]">
-              Sign in with your Pantry Lane account to earn Lane Points, redeem $5 grocery offsets, and save your recurring shopping lists.
+              Sign in with your FairPrice account to earn Linkpoints, redeem $5 grocery offsets, and save your recurring shopping lists.
             </p>
             <button
               type="button"
               onClick={onToggleSignIn}
-              className="w-full h-11 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-sm font-bold"
+              className="w-full h-11 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-sm font-bold"
             >
-              Sign In as Demo Member (1,280 Lane Points)
+              Sign In as Demo Member (1,280 Linkpoints)
             </button>
           </div>
         )}

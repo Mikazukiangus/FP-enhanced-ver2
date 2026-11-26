@@ -201,7 +201,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
       {/* Compact Smart Meal Plan & Pantry Status Bar */}
       <div className="bg-white rounded-xl border border-[#E5E8EE] px-4 py-3 flex flex-col md:flex-row md:items-center justify-between gap-3">
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm">
-          <span className="font-extrabold text-[#134E4A]">
+          <span className="font-extrabold text-[#003876]">
             Smart Meal Planner
           </span>
           <span aria-hidden="true" className="text-[#CBD5E1]">·</span>
@@ -211,7 +211,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
           </span>
           <span aria-hidden="true" className="text-[#CBD5E1]">·</span>
           <span className="text-[#4B5563] tabular-nums">
-            <strong className="text-[#0F766E]">{shoppingListNeededCount}</strong> items to buy
+            <strong className="text-[#004B93]">{shoppingListNeededCount}</strong> items to buy
           </span>
           <span aria-hidden="true" className="text-[#CBD5E1]">·</span>
           <span className="text-[#15803D] font-medium tabular-nums">
@@ -223,15 +223,15 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
           <button
             type="button"
             onClick={() => onOpenShoppingList('pantry')}
-            className="h-9 px-3.5 rounded-lg border border-[#D4D9E2] hover:border-[#0F766E] bg-white text-xs font-bold text-[#1A1D23] hover:text-[#0F766E] flex items-center gap-1.5 transition-colors whitespace-nowrap"
+            className="h-9 px-3.5 rounded-lg border border-[#D4D9E2] hover:border-[#004B93] bg-white text-xs font-bold text-[#1A1D23] hover:text-[#004B93] flex items-center gap-1.5 transition-colors whitespace-nowrap"
           >
-            <PackageCheck className="w-3.5 h-3.5 text-[#0F766E]" />
+            <PackageCheck className="w-3.5 h-3.5 text-[#004B93]" />
             <span>What I Already Have</span>
           </button>
           <button
             type="button"
             onClick={() => onOpenShoppingList('list')}
-            className="h-9 px-4 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-xs font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap"
+            className="h-9 px-4 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-xs font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap"
           >
             <ClipboardList className="w-3.5 h-3.5" />
             <span>
@@ -256,7 +256,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
               <button
                 type="button"
                 onClick={resetFilters}
-                className="mt-4 px-4 py-2 rounded-lg bg-[#0F766E] text-white text-xs font-bold hover:bg-[#134E4A]"
+                className="mt-4 px-4 py-2 rounded-lg bg-[#004B93] text-white text-xs font-bold hover:bg-[#003876]"
               >
                 Reset Recipe Filters
               </button>
@@ -290,8 +290,8 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
                     key={recipe.id}
                     className={`group bg-white rounded-xl border transition-all duration-150 flex flex-col overflow-hidden ${
                       isPlanned
-                        ? 'border-[#0F766E] ring-1 ring-[#0F766E]/20'
-                        : 'border-[#E5E8EE] hover:border-[#0F766E]/50 hover:shadow-[0_4px_16px_rgba(15,118,110,0.08)]'
+                        ? 'border-[#004B93] ring-1 ring-[#004B93]/20'
+                        : 'border-[#E5E8EE] hover:border-[#004B93]/50 hover:shadow-[0_4px_16px_rgba(0,75,147,0.08)]'
                     }`}
                   >
                     {/* 4:3 Dish Photo */}
@@ -313,7 +313,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
                       <button
                         type="button"
                         onClick={() => onSelectRecipe(recipe, servings)}
-                        className="text-left text-[15px] font-extrabold text-[#134E4A] group-hover:text-[#0F766E] leading-snug transition-colors"
+                        className="text-left text-[15px] font-extrabold text-[#003876] group-hover:text-[#004B93] leading-snug transition-colors"
                       >
                         {recipe.title}
                       </button>
@@ -345,7 +345,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
                             type="button"
                             onClick={() => handleAdjustCardServings(recipe, -1)}
                             aria-label={`Decrease servings for ${recipe.title}`}
-                            className="w-7 h-full flex items-center justify-center text-[#374151] hover:bg-[#E6FAF6] hover:text-[#0F766E] transition-colors"
+                            className="w-7 h-full flex items-center justify-center text-[#374151] hover:bg-[#EBF3FB] hover:text-[#004B93] transition-colors"
                           >
                             <Minus className="w-3 h-3" />
                           </button>
@@ -356,7 +356,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
                             type="button"
                             onClick={() => handleAdjustCardServings(recipe, 1)}
                             aria-label={`Increase servings for ${recipe.title}`}
-                            className="w-7 h-full flex items-center justify-center text-[#374151] hover:bg-[#E6FAF6] hover:text-[#0F766E] transition-colors"
+                            className="w-7 h-full flex items-center justify-center text-[#374151] hover:bg-[#EBF3FB] hover:text-[#004B93] transition-colors"
                           >
                             <Plus className="w-3 h-3" />
                           </button>
@@ -368,7 +368,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
                         <button
                           type="button"
                           onClick={() => onSelectRecipe(recipe, servings)}
-                          className="h-9 px-3 rounded-lg border border-[#0F766E] text-[#0F766E] hover:bg-[#F0FDFA] text-xs font-bold transition-colors whitespace-nowrap"
+                          className="h-9 px-3 rounded-lg border border-[#004B93] text-[#004B93] hover:bg-[#EFF5FC] text-xs font-bold transition-colors whitespace-nowrap"
                         >
                           Read More
                         </button>
@@ -377,8 +377,8 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
                           onClick={() => onToggleMealInPlan(recipe, servings)}
                           className={`h-9 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1 transition-colors whitespace-nowrap ${
                             isPlanned
-                              ? 'bg-[#134E4A] text-white hover:bg-[#0F766E]'
-                              : 'bg-[#0F766E] text-white hover:bg-[#134E4A]'
+                              ? 'bg-[#003876] text-white hover:bg-[#004B93]'
+                              : 'bg-[#004B93] text-white hover:bg-[#003876]'
                           }`}
                         >
                           {isPlanned ? (
@@ -412,7 +412,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
               onChange={(e) => setRecipeSearch(e.target.value)}
               placeholder="Search for recipe"
               aria-label="Search for recipe"
-              className="w-full h-10 pl-3.5 pr-9 rounded-lg border border-[#D4D9E2] bg-[#FAFBFD] focus:bg-white focus:border-[#0F766E] outline-none text-xs sm:text-sm text-[#1A1D23] placeholder:text-[#6B7280]"
+              className="w-full h-10 pl-3.5 pr-9 rounded-lg border border-[#D4D9E2] bg-[#FAFBFD] focus:bg-white focus:border-[#004B93] outline-none text-xs sm:text-sm text-[#1A1D23] placeholder:text-[#6B7280]"
             />
             {recipeSearch ? (
               <button
@@ -436,7 +436,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
               <button
                 type="button"
                 onClick={resetFilters}
-                className="font-bold text-[#0F766E] hover:underline"
+                className="font-bold text-[#004B93] hover:underline"
               >
                 Clear all
               </button>
@@ -455,18 +455,18 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
                     type="button"
                     onClick={() => toggleGroup(group.key)}
                     aria-expanded={isOpen}
-                    className="w-full flex items-center justify-between gap-2 text-left text-xs sm:text-[13px] font-semibold text-[#1A1D23] hover:text-[#0F766E] transition-colors py-0.5"
+                    className="w-full flex items-center justify-between gap-2 text-left text-xs sm:text-[13px] font-semibold text-[#1A1D23] hover:text-[#004B93] transition-colors py-0.5"
                   >
                     <span className="flex items-center gap-2">
                       {isOpen ? (
-                        <Minus className="w-3.5 h-3.5 text-[#0F766E] shrink-0" />
+                        <Minus className="w-3.5 h-3.5 text-[#004B93] shrink-0" />
                       ) : (
                         <Plus className="w-3.5 h-3.5 text-[#5A6270] shrink-0" />
                       )}
                       <span>{group.label}</span>
                     </span>
                     {selectedVal && (
-                      <span className="text-[11px] font-bold text-[#0F766E] truncate max-w-[90px]">
+                      <span className="text-[11px] font-bold text-[#004B93] truncate max-w-[90px]">
                         {selectedVal}
                       </span>
                     )}
@@ -483,7 +483,7 @@ export const MealPlannerSection: React.FC<MealPlannerSectionProps> = ({
                             onClick={() => toggleFilterOption(group.key, option)}
                             className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors flex items-center justify-between ${
                               active
-                                ? 'bg-[#F0FDFA] text-[#0F766E] font-bold'
+                                ? 'bg-[#EFF5FC] text-[#004B93] font-bold'
                                 : 'text-[#4B5563] hover:bg-[#F8FAFC] hover:text-[#1A1D23]'
                             }`}
                           >

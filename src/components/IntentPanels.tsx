@@ -118,7 +118,7 @@ export const ConsolidatedProductGrid: React.FC<ConsolidatedProductGridProps> = (
                 aria-label="Sort products"
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-                className="h-8 px-2.5 rounded-lg border border-[#D4D9E2] text-xs font-semibold text-[#1A1D23] bg-white outline-none focus:border-[#0F766E]"
+                className="h-8 px-2.5 rounded-lg border border-[#D4D9E2] text-xs font-semibold text-[#1A1D23] bg-white outline-none focus:border-[#004B93]"
               >
                 <option value="featured">Sort: Featured</option>
                 <option value="rating">Sort: Top Rated</option>
@@ -139,8 +139,8 @@ export const ConsolidatedProductGrid: React.FC<ConsolidatedProductGridProps> = (
                 onClick={() => setWineStyle(style)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors whitespace-nowrap shrink-0 ${
                   wineStyle === style
-                    ? 'bg-[#0F766E] text-white'
-                    : 'bg-[#F3F5F8] text-[#374151] hover:bg-[#E6FAF6] hover:text-[#0F766E]'
+                    ? 'bg-[#004B93] text-white'
+                    : 'bg-[#F3F5F8] text-[#374151] hover:bg-[#EBF3FB] hover:text-[#004B93]'
                 }`}
               >
                 {style === 'all' ? 'All Pairings' : style}
@@ -154,8 +154,8 @@ export const ConsolidatedProductGrid: React.FC<ConsolidatedProductGridProps> = (
                 onClick={() => setActiveFilter(btn.id)}
                 className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors whitespace-nowrap shrink-0 ${
                   activeFilter === btn.id
-                    ? 'bg-[#0F766E] text-white'
-                    : 'bg-[#F3F5F8] text-[#374151] hover:bg-[#E6FAF6] hover:text-[#0F766E]'
+                    ? 'bg-[#004B93] text-white'
+                    : 'bg-[#F3F5F8] text-[#374151] hover:bg-[#EBF3FB] hover:text-[#004B93]'
                 }`}
               >
                 {btn.label}
@@ -177,7 +177,7 @@ export const ConsolidatedProductGrid: React.FC<ConsolidatedProductGridProps> = (
               setActiveFilter('all');
               setWineStyle('all');
             }}
-            className="mt-3 px-4 py-2 rounded-lg bg-[#0F766E] text-white text-xs font-bold"
+            className="mt-3 px-4 py-2 rounded-lg bg-[#004B93] text-white text-xs font-bold"
           >
             Show All Items
           </button>
@@ -220,14 +220,14 @@ export const VouchersPanel: React.FC<VouchersPanelProps> = ({
       <div className="bg-white rounded-xl border border-[#E5E8EE] px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
           <h2 className="text-lg font-extrabold text-[#1A1D23] flex items-center gap-2">
-            <Ticket className="w-5 h-5 text-[#EA580C]" />
+            <Ticket className="w-5 h-5 text-[#E31837]" />
             <span>Active Online Vouchers</span>
           </h2>
           <p className="text-xs text-[#5A6270] mt-0.5">
             Claim any voucher below to apply it automatically in your shopping cart.
           </p>
         </div>
-        <span className="text-xs font-semibold text-[#0F766E] tabular-nums">
+        <span className="text-xs font-semibold text-[#004B93] tabular-nums">
           {claimedVouchers.length} of {VOUCHERS.length} claimed
         </span>
       </div>
@@ -242,16 +242,16 @@ export const VouchersPanel: React.FC<VouchersPanelProps> = ({
               key={voucher.code}
               className={`bg-white rounded-xl border p-4 flex flex-col justify-between gap-4 transition-all ${
                 isApplied
-                  ? 'border-[#0F766E] ring-1 ring-[#0F766E]/20'
-                  : 'border-[#E5E8EE] hover:border-[#0F766E]/45'
+                  ? 'border-[#004B93] ring-1 ring-[#004B93]/20'
+                  : 'border-[#E5E8EE] hover:border-[#004B93]/45'
               }`}
             >
               <div>
                 <div className="flex items-center justify-between gap-2 text-[11px] font-bold">
-                  <span className="text-[#EA580C]">{voucher.categoryNote}</span>
+                  <span className="text-[#C8102E]">{voucher.categoryNote}</span>
                   <span className="text-[#6B7280]">{voucher.validUntil}</span>
                 </div>
-                <h3 className="text-base font-extrabold text-[#134E4A] mt-1.5">
+                <h3 className="text-base font-extrabold text-[#003876] mt-1.5">
                   {voucher.title}
                 </h3>
                 <p className="text-xs text-[#5A6270] mt-1 leading-relaxed">
@@ -270,7 +270,7 @@ export const VouchersPanel: React.FC<VouchersPanelProps> = ({
                   className={`px-3.5 py-2 rounded-lg text-xs font-bold flex items-center gap-1.5 transition-colors whitespace-nowrap ${
                     isApplied
                       ? 'bg-[#ECFDF3] text-[#15803D]'
-                      : 'bg-[#0F766E] hover:bg-[#134E4A] text-white'
+                      : 'bg-[#004B93] hover:bg-[#003876] text-white'
                   }`}
                 >
                   {isApplied ? (

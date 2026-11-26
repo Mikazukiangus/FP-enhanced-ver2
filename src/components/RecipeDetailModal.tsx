@@ -82,7 +82,7 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
 
   const handleShare = () => {
     const listText = [
-      `Pantry Lane Recipe: ${recipe.title} (${servings} servings)`,
+      `FairPrice Recipe: ${recipe.title} (${servings} servings)`,
       `Need to buy:`,
       ...needToBuy.map(
         (i) => `- ${i.label}: ${i.scaledAmount} ${i.unit} (${i.scaledPacks} pack${i.scaledPacks > 1 ? 's' : ''})`
@@ -126,7 +126,7 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
             <button
               type="button"
               onClick={handleShare}
-              className="h-9 px-3 rounded-lg border border-[#D4D9E2] hover:border-[#0F766E] text-xs font-bold text-[#374151] hover:text-[#0F766E] flex items-center gap-1.5 transition-colors whitespace-nowrap"
+              className="h-9 px-3 rounded-lg border border-[#D4D9E2] hover:border-[#004B93] text-xs font-bold text-[#374151] hover:text-[#004B93] flex items-center gap-1.5 transition-colors whitespace-nowrap"
             >
               <Share2 className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Share Recipe</span>
@@ -166,7 +166,7 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
               <ol className="space-y-2.5">
                 {recipe.steps.map((step, idx) => (
                   <li key={idx} className="flex items-start gap-3 text-xs sm:text-[13px] text-[#374151] leading-relaxed">
-                    <span className="w-5 h-5 rounded-full bg-[#F0FDFA] text-[#0F766E] font-extrabold text-[11px] flex items-center justify-center shrink-0 mt-0.5 tabular-nums">
+                    <span className="w-5 h-5 rounded-full bg-[#EFF5FC] text-[#004B93] font-extrabold text-[11px] flex items-center justify-center shrink-0 mt-0.5 tabular-nums">
                       {idx + 1}
                     </span>
                     <span>{step}</span>
@@ -197,7 +197,7 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
                 <button
                   type="button"
                   onClick={() => onAddSingleProduct(pairedWine)}
-                  className="px-3 py-1.5 rounded-lg border border-[#0F766E] text-[#0F766E] hover:bg-[#0F766E] hover:text-white text-xs font-bold transition-colors whitespace-nowrap shrink-0"
+                  className="px-3 py-1.5 rounded-lg border border-[#004B93] text-[#004B93] hover:bg-[#004B93] hover:text-white text-xs font-bold transition-colors whitespace-nowrap shrink-0"
                 >
                   + Add
                 </button>
@@ -208,33 +208,33 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
           {/* Right Column: Dynamic Portion Adjuster + What to Buy vs Already Have */}
           <div className="lg:col-span-6 flex flex-col">
             {/* Portion Control Box */}
-            <div className="p-4 rounded-xl bg-[#F0FDFA] border border-[#CCFBF1]">
+            <div className="p-4 rounded-xl bg-[#EFF5FC] border border-[#C7DCF2]">
               <div className="flex items-center justify-between gap-2 mb-2.5">
                 <div>
-                  <div className="text-xs font-extrabold text-[#134E4A]">
+                  <div className="text-xs font-extrabold text-[#003876]">
                     Adjust Portions
                   </div>
                   <div className="text-[11px] text-[#4B5563]">
                     Ingredient amounts &amp; grocery packs scale automatically
                   </div>
                 </div>
-                <div className="inline-flex items-center bg-white border border-[#99E6D8] rounded-lg h-8 overflow-hidden">
+                <div className="inline-flex items-center bg-white border border-[#93C5FD] rounded-lg h-8 overflow-hidden">
                   <button
                     type="button"
                     onClick={() => setServings((s) => Math.max(1, s - 1))}
                     aria-label="Decrease servings"
-                    className="w-8 h-full flex items-center justify-center text-[#0F766E] hover:bg-[#E6FAF6]"
+                    className="w-8 h-full flex items-center justify-center text-[#004B93] hover:bg-[#EBF3FB]"
                   >
                     <Minus className="w-3.5 h-3.5" />
                   </button>
-                  <span className="px-2.5 text-sm font-extrabold text-[#134E4A] tabular-nums">
+                  <span className="px-2.5 text-sm font-extrabold text-[#003876] tabular-nums">
                     {servings}
                   </span>
                   <button
                     type="button"
                     onClick={() => setServings((s) => Math.min(12, s + 1))}
                     aria-label="Increase servings"
-                    className="w-8 h-full flex items-center justify-center text-[#0F766E] hover:bg-[#E6FAF6]"
+                    className="w-8 h-full flex items-center justify-center text-[#004B93] hover:bg-[#EBF3FB]"
                   >
                     <Plus className="w-3.5 h-3.5" />
                   </button>
@@ -249,8 +249,8 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
                     onClick={() => setServings(preset)}
                     className={`flex-1 py-1.5 rounded-md text-xs font-bold transition-colors tabular-nums ${
                       servings === preset
-                        ? 'bg-[#0F766E] text-white'
-                        : 'bg-white text-[#374151] hover:text-[#0F766E]'
+                        ? 'bg-[#004B93] text-white'
+                        : 'bg-white text-[#374151] hover:text-[#004B93]'
                     }`}
                   >
                     {preset} {preset === 1 ? 'pax' : 'pax'}
@@ -272,7 +272,7 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
 
               {/* Need to Buy List */}
               <div className="space-y-2">
-                <div className="text-[11px] font-bold text-[#0F766E] flex items-center justify-between">
+                <div className="text-[11px] font-bold text-[#004B93] flex items-center justify-between">
                   <span>Need to Buy ({needToBuy.length})</span>
                   <span className="tabular-nums">${missingSubtotal.toFixed(2)}</span>
                 </div>
@@ -354,7 +354,7 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
                         <button
                           type="button"
                           onClick={() => onTogglePantry(item.productId)}
-                          className="text-[11px] font-bold text-[#0F766E] hover:underline whitespace-nowrap shrink-0"
+                          className="text-[11px] font-bold text-[#004B93] hover:underline whitespace-nowrap shrink-0"
                         >
                           Need to buy
                         </button>
@@ -380,7 +380,7 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
                     );
                     onClose();
                   }}
-                  className="w-full h-11 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors"
+                  className="w-full h-11 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-sm font-bold flex items-center justify-center gap-2 transition-colors"
                 >
                   <ShoppingCart className="w-4 h-4" />
                   <span className="tabular-nums">
@@ -395,7 +395,7 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
                 className={`w-full h-10 rounded-lg border text-xs font-bold transition-colors ${
                   isPlanned
                     ? 'border-[#15803D] bg-[#ECFDF3] text-[#15803D]'
-                    : 'border-[#0F766E] text-[#0F766E] hover:bg-[#F0FDFA]'
+                    : 'border-[#004B93] text-[#004B93] hover:bg-[#EFF5FC]'
                 }`}
               >
                 {isPlanned

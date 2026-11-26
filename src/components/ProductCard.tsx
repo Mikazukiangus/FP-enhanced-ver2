@@ -31,7 +31,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       : null;
 
   return (
-    <article className="group bg-white rounded-xl border border-[#E5E8EE] hover:border-[#0F766E]/45 hover:shadow-[0_4px_16px_rgba(15,118,110,0.08)] transition-all duration-150 flex flex-col overflow-hidden">
+    <article className="group bg-white rounded-xl border border-[#E5E8EE] hover:border-[#004B93]/45 hover:shadow-[0_4px_16px_rgba(0,75,147,0.08)] transition-all duration-150 flex flex-col overflow-hidden">
       {/* Compact Image Container with Inline Top Controls */}
       <div className="relative bg-white px-3 pt-2.5 pb-1.5">
         <div className="flex items-center justify-between gap-2 mb-1 min-h-[20px]">
@@ -39,8 +39,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <span
               className={`text-[11px] font-bold tracking-tight ${
                 product.promoType === 'must-buy' || product.promoType === 'price-drop'
-                  ? 'text-[#C2410C]'
-                  : 'text-[#0F766E]'
+                  ? 'text-[#C8102E]'
+                  : 'text-[#004B93]'
               }`}
             >
               {product.promoTag}
@@ -62,8 +62,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             }
             className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors shrink-0 ${
               isWishlisted
-                ? 'text-[#EA580C] bg-[#FFF4EC]'
-                : 'text-[#8A94A6] hover:text-[#EA580C] hover:bg-[#F5F6F8]'
+                ? 'text-[#E31837] bg-[#FEF2F4]'
+                : 'text-[#8A94A6] hover:text-[#E31837] hover:bg-[#F5F7FA]'
             }`}
           >
             <Heart className={`w-3.5 h-3.5 ${isWishlisted ? 'fill-current' : ''}`} />
@@ -100,7 +100,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <button
           type="button"
           onClick={() => onOpenDetail(product)}
-          className="text-left text-[13px] font-bold text-[#1A1D23] hover:text-[#0F766E] leading-[1.3] line-clamp-2 transition-colors"
+          className="text-left text-[13px] font-bold text-[#1A1D23] hover:text-[#004B93] leading-[1.3] line-clamp-2 transition-colors"
         >
           {product.name}
         </button>
@@ -125,7 +125,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Optional Wine Pairing or In-Pantry Note */}
         {product.winePairingNote ? (
-          <div className="mt-1 text-[11px] text-[#0F766E] font-medium line-clamp-1">
+          <div className="mt-1 text-[11px] text-[#004B93] font-medium line-clamp-1">
             {product.winePairingNote}
           </div>
         ) : inPantry ? (
@@ -149,11 +149,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               )}
             </div>
             {product.bundle ? (
-              <span className="text-[10.5px] font-bold text-[#0F766E] truncate">
+              <span className="text-[10.5px] font-bold text-[#004B93] truncate">
                 {product.bundle.label}
               </span>
             ) : savings ? (
-              <span className="text-[10.5px] font-semibold text-[#C2410C] tabular-nums shrink-0">
+              <span className="text-[10.5px] font-semibold text-[#C8102E] tabular-nums shrink-0">
                 Save ${savings}
               </span>
             ) : null}
@@ -163,28 +163,28 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <button
               type="button"
               onClick={() => onAdd(product)}
-              className="w-full h-8 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] active:scale-[0.99] text-white text-xs font-bold transition-all whitespace-nowrap"
+              className="w-full h-8 rounded-lg bg-[#004B93] hover:bg-[#003876] active:scale-[0.99] text-white text-xs font-bold transition-all whitespace-nowrap"
             >
               Add to cart
             </button>
           ) : (
-            <div className="w-full h-8 rounded-lg border-2 border-[#0F766E] bg-[#F0FDFA] flex items-center justify-between overflow-hidden">
+            <div className="w-full h-8 rounded-lg border-2 border-[#004B93] bg-[#EFF5FC] flex items-center justify-between overflow-hidden">
               <button
                 type="button"
                 onClick={() => onUpdateQty(product.id, -1)}
                 aria-label={`Decrease quantity of ${product.name}`}
-                className="w-8 h-full flex items-center justify-center text-[#0F766E] hover:bg-[#CCFBF1] transition-colors"
+                className="w-8 h-full flex items-center justify-center text-[#004B93] hover:bg-[#DCEAF8] transition-colors"
               >
                 <Minus className="w-3.5 h-3.5 stroke-[2.5]" />
               </button>
-              <span className="text-xs font-extrabold text-[#134E4A] tabular-nums">
+              <span className="text-xs font-extrabold text-[#003876] tabular-nums">
                 {quantity}
               </span>
               <button
                 type="button"
                 onClick={() => onUpdateQty(product.id, 1)}
                 aria-label={`Increase quantity of ${product.name}`}
-                className="w-8 h-full flex items-center justify-center text-[#0F766E] hover:bg-[#CCFBF1] transition-colors"
+                className="w-8 h-full flex items-center justify-center text-[#004B93] hover:bg-[#DCEAF8] transition-colors"
               >
                 <Plus className="w-3.5 h-3.5 stroke-[2.5]" />
               </button>

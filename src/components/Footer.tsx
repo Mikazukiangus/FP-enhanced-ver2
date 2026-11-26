@@ -24,11 +24,15 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-10 grid grid-cols-2 md:grid-cols-5 gap-8">
         {/* Column 1: Help & Brand Links */}
         <div>
-          <div className="text-base font-extrabold tracking-tight mb-3">
-            <span className="text-[#134E4A]">Pantry </span>
-            <span className="text-[#EA580C]">Lane</span>
+          <div className="mb-3">
+            <img
+              src="/assets/aistudio/image_e506b260.png"
+              alt="FairPrice"
+              referrerPolicy="no-referrer"
+              className="h-6 w-auto object-contain"
+            />
           </div>
-          <ul className="space-y-2 text-xs text-[#0F766E] font-medium">
+          <ul className="space-y-2 text-xs text-[#004B93] font-medium">
             <li>
               <button type="button" onClick={onOpenAccount} className="hover:underline">
                 Help Centre
@@ -57,10 +61,10 @@ export const Footer: React.FC<FooterProps> = ({
           <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#374151] mb-3">
             Memberships
           </h4>
-          <ul className="space-y-2 text-xs text-[#0F766E] font-medium">
+          <ul className="space-y-2 text-xs text-[#004B93] font-medium">
             <li>
               <button type="button" onClick={() => onNavigate('digital-club')} className="hover:underline">
-                Lane Plus
+                Digital Club
               </button>
             </li>
             <li>
@@ -70,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({
             </li>
             <li>
               <button type="button" onClick={onOpenAccount} className="hover:underline">
-                Lane Rewards
+                Link Rewards
               </button>
             </li>
           </ul>
@@ -81,7 +85,7 @@ export const Footer: React.FC<FooterProps> = ({
           <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#374151] mb-3">
             Our Stores
           </h4>
-          <ul className="space-y-2 text-xs text-[#0F766E] font-medium">
+          <ul className="space-y-2 text-xs text-[#004B93] font-medium">
             <li>
               <button type="button" onClick={() => onSelectIntent('promos')} className="hover:underline">
                 Weekly Promotions
@@ -122,50 +126,58 @@ export const Footer: React.FC<FooterProps> = ({
           </p>
         </div>
 
-        {/* Column 5: Download Our App QR + Back to Top */}
+        {/* Column 5: Download Our App QR + App Icon */}
         <div className="flex flex-col items-start justify-between">
           <div>
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#374151] mb-2.5">
-              Download Our App
+              Download FairPrice App
             </h4>
-            <div className="p-2 rounded-lg border border-[#E5E8EE] bg-white inline-block">
-              <svg
-                width="76"
-                height="76"
-                viewBox="0 0 21 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-label="Scan QR code to get the Pantry Lane mobile app"
-              >
-                <rect width="21" height="21" fill="#FFFFFF" />
-                {/* Top-left finder */}
-                <rect x="1" y="1" width="6" height="6" fill="#134E4A" />
-                <rect x="2" y="2" width="4" height="4" fill="#FFFFFF" />
-                <rect x="3" y="3" width="2" height="2" fill="#134E4A" />
-                {/* Top-right finder */}
-                <rect x="14" y="1" width="6" height="6" fill="#134E4A" />
-                <rect x="15" y="2" width="4" height="4" fill="#FFFFFF" />
-                <rect x="16" y="3" width="2" height="2" fill="#134E4A" />
-                {/* Bottom-left finder */}
-                <rect x="1" y="14" width="6" height="6" fill="#134E4A" />
-                <rect x="2" y="15" width="4" height="4" fill="#FFFFFF" />
-                <rect x="3" y="16" width="2" height="2" fill="#134E4A" />
-                {/* Data matrix modules */}
-                <rect x="9" y="1" width="1" height="2" fill="#134E4A" />
-                <rect x="11" y="2" width="2" height="1" fill="#134E4A" />
-                <rect x="9" y="5" width="3" height="2" fill="#134E4A" />
-                <rect x="1" y="9" width="2" height="2" fill="#134E4A" />
-                <rect x="5" y="9" width="3" height="1" fill="#134E4A" />
-                <rect x="9" y="9" width="3" height="3" fill="#EA580C" />
-                <rect x="14" y="9" width="2" height="2" fill="#134E4A" />
-                <rect x="18" y="9" width="2" height="3" fill="#134E4A" />
-                <rect x="9" y="14" width="2" height="2" fill="#134E4A" />
-                <rect x="13" y="13" width="2" height="2" fill="#134E4A" />
-                <rect x="16" y="14" width="4" height="2" fill="#134E4A" />
-                <rect x="9" y="18" width="3" height="2" fill="#134E4A" />
-                <rect x="14" y="17" width="2" height="3" fill="#134E4A" />
-                <rect x="18" y="18" width="2" height="2" fill="#134E4A" />
-              </svg>
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg border border-[#E5E8EE] bg-white inline-block">
+                <svg
+                  width="76"
+                  height="76"
+                  viewBox="0 0 21 21"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-label="Scan QR code to get the FairPrice mobile app"
+                >
+                  <rect width="21" height="21" fill="#FFFFFF" />
+                  {/* Top-left finder */}
+                  <rect x="1" y="1" width="6" height="6" fill="#003876" />
+                  <rect x="2" y="2" width="4" height="4" fill="#FFFFFF" />
+                  <rect x="3" y="3" width="2" height="2" fill="#003876" />
+                  {/* Top-right finder */}
+                  <rect x="14" y="1" width="6" height="6" fill="#003876" />
+                  <rect x="15" y="2" width="4" height="4" fill="#FFFFFF" />
+                  <rect x="16" y="3" width="2" height="2" fill="#003876" />
+                  {/* Bottom-left finder */}
+                  <rect x="1" y="14" width="6" height="6" fill="#003876" />
+                  <rect x="2" y="15" width="4" height="4" fill="#FFFFFF" />
+                  <rect x="3" y="16" width="2" height="2" fill="#003876" />
+                  {/* Data matrix modules */}
+                  <rect x="9" y="1" width="1" height="2" fill="#003876" />
+                  <rect x="11" y="2" width="2" height="1" fill="#003876" />
+                  <rect x="9" y="5" width="3" height="2" fill="#003876" />
+                  <rect x="1" y="9" width="2" height="2" fill="#003876" />
+                  <rect x="5" y="9" width="3" height="1" fill="#003876" />
+                  <rect x="9" y="9" width="3" height="3" fill="#E31837" />
+                  <rect x="14" y="9" width="2" height="2" fill="#003876" />
+                  <rect x="18" y="9" width="2" height="3" fill="#003876" />
+                  <rect x="9" y="14" width="2" height="2" fill="#003876" />
+                  <rect x="13" y="13" width="2" height="2" fill="#003876" />
+                  <rect x="16" y="14" width="4" height="2" fill="#003876" />
+                  <rect x="9" y="18" width="3" height="2" fill="#003876" />
+                  <rect x="14" y="17" width="2" height="3" fill="#003876" />
+                  <rect x="18" y="18" width="2" height="2" fill="#003876" />
+                </svg>
+              </div>
+              <img
+                src="/assets/aistudio/image_65f7fa54.png"
+                alt="FairPrice App Icon"
+                referrerPolicy="no-referrer"
+                className="w-14 h-14 rounded-xl object-cover shadow-xs"
+              />
             </div>
           </div>
         </div>
@@ -175,21 +187,21 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="border-t border-[#E5E8EE] bg-[#FAFBFD]">
         <div className="max-w-[1280px] mx-auto px-4 lg:px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#5A6270]">
           <div>
-            © {new Date().getFullYear()} Pantry Lane Singapore demo. Making healthy meal planning &amp; grocery shopping effortless.
+            © {new Date().getFullYear()} FairPrice Online Singapore (Concept Redesign). Making healthy meal planning &amp; grocery shopping effortless.
           </div>
           <div className="flex items-center gap-4">
-            <button type="button" onClick={onOpenAccount} className="hover:text-[#0F766E]">
+            <button type="button" onClick={onOpenAccount} className="hover:text-[#004B93]">
               Terms &amp; Conditions
             </button>
             <span aria-hidden="true">·</span>
-            <button type="button" onClick={onOpenAccount} className="hover:text-[#0F766E]">
+            <button type="button" onClick={onOpenAccount} className="hover:text-[#004B93]">
               Privacy Notice
             </button>
             <button
               type="button"
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="w-8 h-8 rounded-full border border-[#D4D9E2] bg-white hover:border-[#0F766E] text-[#0F766E] flex items-center justify-center transition-colors"
+              className="w-8 h-8 rounded-full border border-[#D4D9E2] bg-white hover:border-[#004B93] text-[#004B93] flex items-center justify-center transition-colors"
             >
               <ChevronUp className="w-4 h-4" />
             </button>

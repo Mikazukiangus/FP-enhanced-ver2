@@ -108,46 +108,23 @@ export const Header: React.FC<HeaderProps> = ({
           <button
             type="button"
             onClick={() => onNavigate('home', null)}
-            aria-label="Pantry Lane Online Home"
-            className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E] rounded-md shrink-0"
+            aria-label="FairPrice Online Home"
+            className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004B93] rounded-md shrink-0 py-1"
           >
-            <svg
-              width="30"
-              height="30"
-              viewBox="0 0 36 36"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="shrink-0"
-              aria-hidden="true"
-            >
-              <rect width="36" height="36" rx="8" fill="#0F766E" />
-              <path
-                d="M9 14.5C9 12.567 10.567 11 12.5 11H23.5C25.433 11 27 12.567 27 14.5V16H9V14.5Z"
-                fill="#FFFFFF"
-              />
-              <path
-                d="M10.5 17.5H25.5L24.1 25.2C23.85 26.55 22.67 27.5 21.3 27.5H14.7C13.33 27.5 12.15 26.55 11.9 25.2L10.5 17.5Z"
-                fill="#EA580C"
-              />
-              <path
-                d="M14.5 11V9.5C14.5 8.12 15.62 7 17 7H19C20.38 7 21.5 8.12 21.5 9.5V11"
-                stroke="#FFFFFF"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-              />
-            </svg>
-            <span className="text-[20px] font-extrabold tracking-tight whitespace-nowrap">
-              <span className="text-[#134E4A]">Pantry </span>
-              <span className="text-[#EA580C]">Lane</span>
-            </span>
+            <img
+              src="/assets/aistudio/image_e506b260.png"
+              alt="FairPrice"
+              referrerPolicy="no-referrer"
+              className="h-7 sm:h-8 w-auto object-contain"
+            />
           </button>
 
           <button
             type="button"
             onClick={onOpenDelivery}
-            className="hidden md:flex items-center gap-1.5 text-xs text-[#4B5563] hover:text-[#0F766E] transition-colors whitespace-nowrap shrink-0 pl-3 border-l border-[#E5E8EE]"
+            className="hidden md:flex items-center gap-1.5 text-xs text-[#4B5563] hover:text-[#004B93] transition-colors whitespace-nowrap shrink-0 pl-3 border-l border-[#E5E8EE]"
           >
-            <MapPin className="w-3.5 h-3.5 text-[#EA580C] shrink-0" />
+            <MapPin className="w-3.5 h-3.5 text-[#E31837] shrink-0" />
             <span className="font-semibold text-[#1A1D23] tabular-nums">{postalCode}</span>
             <span aria-hidden="true" className="text-[#9CA3AF]">·</span>
             <span className="truncate max-w-[130px]">{deliverySummary}</span>
@@ -165,7 +142,7 @@ export const Header: React.FC<HeaderProps> = ({
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder="Meiji Milk, Sea Bass, Pork Stew, or recipes..."
               aria-label="Search groceries and recipes"
-              className="w-full h-10 pl-10 pr-10 rounded-full border border-[#D4D9E2] bg-[#F8FAFC] focus:bg-white focus:border-[#0F766E] focus:ring-2 focus:ring-[#0F766E]/15 outline-none text-sm text-[#1A1D23] placeholder:text-[#6B7280] transition-all"
+              className="w-full h-10 pl-10 pr-10 rounded-full border border-[#D4D9E2] bg-[#F8FAFC] focus:bg-white focus:border-[#004B93] focus:ring-2 focus:ring-[#004B93]/15 outline-none text-sm text-[#1A1D23] placeholder:text-[#6B7280] transition-all"
             />
             {searchQuery && (
               <button
@@ -197,7 +174,7 @@ export const Header: React.FC<HeaderProps> = ({
                             setSearchFocused(false);
                             onSelectRecipe(rec);
                           }}
-                          className="w-full flex items-center gap-3 p-2 hover:bg-[#F0FDFA] rounded-lg transition-colors text-left"
+                          className="w-full flex items-center gap-3 p-2 hover:bg-[#EFF5FC] rounded-lg transition-colors text-left"
                         >
                           <img
                             src={rec.image}
@@ -213,7 +190,7 @@ export const Header: React.FC<HeaderProps> = ({
                               {rec.prepTime} · Serves {rec.baseServings} (scalable)
                             </div>
                           </div>
-                          <ChefHat className="w-4 h-4 text-[#0F766E] shrink-0" />
+                          <ChefHat className="w-4 h-4 text-[#004B93] shrink-0" />
                         </button>
                       ))}
                     </div>
@@ -248,7 +225,7 @@ export const Header: React.FC<HeaderProps> = ({
                               {item.brand} · {item.packSize}
                             </div>
                           </div>
-                          <div className="text-sm font-bold text-[#0F766E] tabular-nums shrink-0">
+                          <div className="text-sm font-bold text-[#004B93] tabular-nums shrink-0">
                             ${item.price.toFixed(2)}
                           </div>
                         </button>
@@ -267,7 +244,7 @@ export const Header: React.FC<HeaderProps> = ({
                         setSearchFocused(false);
                         onSearchSubmit(searchQuery);
                       }}
-                      className="w-full pt-2 border-t border-[#EEF0F3] text-xs font-semibold text-[#0F766E] hover:underline text-center py-1"
+                      className="w-full pt-2 border-t border-[#EEF0F3] text-xs font-semibold text-[#004B93] hover:underline text-center py-1"
                     >
                       View all search results for “{searchQuery}”
                     </button>
@@ -288,7 +265,7 @@ export const Header: React.FC<HeaderProps> = ({
                           setSearchFocused(false);
                           onSearchSubmit(term);
                         }}
-                        className="px-3 py-1.5 rounded-md bg-[#F3F5F8] hover:bg-[#E6FAF6] text-xs font-medium text-[#1A1D23] hover:text-[#0F766E] transition-colors whitespace-nowrap"
+                        className="px-3 py-1.5 rounded-md bg-[#F3F5F8] hover:bg-[#EBF3FB] text-xs font-medium text-[#1A1D23] hover:text-[#004B93] transition-colors whitespace-nowrap"
                       >
                         {term}
                       </button>
@@ -306,12 +283,12 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             onClick={onOpenShoppingList}
             aria-label="Open Smart Shopping List and Pantry"
-            className="relative flex items-center gap-1.5 h-10 px-3 rounded-lg border border-[#E2E6EC] hover:border-[#0F766E] bg-white text-[#1A1D23] hover:text-[#0F766E] text-xs font-bold transition-colors whitespace-nowrap shrink-0"
+            className="relative flex items-center gap-1.5 h-10 px-3 rounded-lg border border-[#E2E6EC] hover:border-[#004B93] bg-white text-[#1A1D23] hover:text-[#004B93] text-xs font-bold transition-colors whitespace-nowrap shrink-0"
           >
-            <ClipboardList className="w-4 h-4 text-[#0F766E] shrink-0" />
+            <ClipboardList className="w-4 h-4 text-[#004B93] shrink-0" />
             <span className="hidden sm:inline">My List</span>
             {(shoppingListNeededCount > 0 || plannedMealsCount > 0) && (
-              <span className="min-w-[18px] h-[18px] px-1 rounded-full bg-[#EA580C] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
+              <span className="min-w-[18px] h-[18px] px-1 rounded-full bg-[#E31837] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
                 {shoppingListNeededCount}
               </span>
             )}
@@ -321,12 +298,12 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             onClick={onOpenCart}
             aria-label="Open Shopping Cart"
-            className="flex items-center gap-2 h-10 px-3.5 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white transition-colors whitespace-nowrap shrink-0"
+            className="flex items-center gap-2 h-10 px-3.5 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white transition-colors whitespace-nowrap shrink-0"
           >
             <div className="relative">
               <ShoppingCart className="w-4 h-4" />
               {cartCount > 0 && (
-                <span className="absolute -top-2 -right-2 min-w-[16px] h-[16px] px-1 rounded-full bg-[#EA580C] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
+                <span className="absolute -top-2 -right-2 min-w-[16px] h-[16px] px-1 rounded-full bg-[#E31837] text-white text-[10px] font-bold flex items-center justify-center tabular-nums">
                   {cartCount}
                 </span>
               )}
@@ -340,7 +317,7 @@ export const Header: React.FC<HeaderProps> = ({
             type="button"
             onClick={onOpenAccount}
             aria-label={isSignedIn ? 'Account: Alex Tan' : 'Sign In'}
-            className="w-10 h-10 rounded-full border border-[#E2E6EC] hover:border-[#0F766E] flex items-center justify-center text-[#374151] hover:text-[#0F766E] transition-colors shrink-0"
+            className="w-10 h-10 rounded-full border border-[#E2E6EC] hover:border-[#004B93] flex items-center justify-center text-[#374151] hover:text-[#004B93] transition-colors shrink-0"
           >
             <User className="w-4 h-4" />
           </button>

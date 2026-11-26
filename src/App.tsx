@@ -214,7 +214,7 @@ export default function App() {
   const deliverySummary =
     fulfillmentMode === 'delivery'
       ? `${selectedSlot.dayLabel}, ${selectedSlot.window}`
-      : `Collect: ${selectedOutlet.name.replace('Pantry Lane ', '')}`;
+      : `Collect: ${selectedOutlet.name.replace('FairPrice ', '')}`;
 
   const handleAddToCart = (product: Product) => {
     setCart((prev) => ({ ...prev, [product.id]: (prev[product.id] || 0) + 1 }));
@@ -362,7 +362,7 @@ export default function App() {
   const currentSlide = HERO_SLIDES[heroIndex];
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5F6F8] text-[#1A1D23]">
+    <div className="min-h-screen flex flex-col bg-[#F5F7FA] text-[#1A1D23]">
       {/* 1. STREAMLINED SINGLE-ROW HEADER */}
       <Header
         searchQuery={searchQuery}
@@ -398,7 +398,7 @@ export default function App() {
           <div className="max-w-[1280px] mx-auto px-4 lg:px-6 pt-5 space-y-6">
             {/* 3. FOCUSED ADVERTS CAROUSEL BANNER (No Scattered Competing Promos) */}
             <section aria-label="Featured Adverts">
-              <div className="relative rounded-2xl overflow-hidden bg-[#134E4A] h-[230px] sm:h-[275px] lg:h-[300px]">
+              <div className="relative rounded-2xl overflow-hidden bg-[#003876] h-[230px] sm:h-[275px] lg:h-[300px]">
                 <img
                   src={currentSlide.image}
                   alt={currentSlide.title}
@@ -406,11 +406,11 @@ export default function App() {
                   className="w-full h-full object-cover object-center"
                 />
                 {/* Crisp Contrast Scrim */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#042F2E]/92 via-[#134E4A]/78 to-[#134E4A]/20" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00224D]/92 via-[#003876]/78 to-[#004B93]/20" />
 
                 <div className="absolute inset-0 flex items-center">
                   <div className="px-6 sm:px-10 lg:px-12 max-w-[640px] text-white">
-                    <div className="text-xs font-bold text-[#5EEAD4]">
+                    <div className="text-xs font-bold text-[#93C5FD]">
                       {currentSlide.eyebrow}
                     </div>
                     <h1 className="text-xl sm:text-3xl lg:text-[34px] font-extrabold leading-[1.15] tracking-tight mt-1.5 text-balance">
@@ -423,7 +423,7 @@ export default function App() {
                       <button
                         type="button"
                         onClick={() => handleSelectIntent(currentSlide.targetIntent, true)}
-                        className="px-5 py-2.5 rounded-lg bg-[#EA580C] hover:bg-[#C2410C] text-white text-xs sm:text-sm font-bold transition-colors"
+                        className="px-5 py-2.5 rounded-lg bg-[#E31837] hover:bg-[#C4122D] text-white text-xs sm:text-sm font-bold transition-colors"
                       >
                         {currentSlide.ctaLabel}
                       </button>
@@ -438,7 +438,7 @@ export default function App() {
                     setHeroIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)
                   }
                   aria-label="Previous advert"
-                  className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#134E4A] items-center justify-center shadow-sm transition-colors"
+                  className="hidden sm:flex absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#003876] items-center justify-center shadow-sm transition-colors"
                 >
                   <ChevronLeft className="w-4 h-4" />
                 </button>
@@ -446,7 +446,7 @@ export default function App() {
                   type="button"
                   onClick={() => setHeroIndex((prev) => (prev + 1) % HERO_SLIDES.length)}
                   aria-label="Next advert"
-                  className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#134E4A] items-center justify-center shadow-sm transition-colors"
+                  className="hidden sm:flex absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-[#003876] items-center justify-center shadow-sm transition-colors"
                 >
                   <ChevronRight className="w-4 h-4" />
                 </button>
@@ -462,7 +462,7 @@ export default function App() {
                     aria-label={`Show advert ${idx + 1}`}
                     className={`h-2 rounded-full transition-all ${
                       idx === heroIndex
-                        ? 'w-6 bg-[#0F766E]'
+                        ? 'w-6 bg-[#004B93]'
                         : 'w-2 bg-[#CBD5E1] hover:bg-[#94A3B8]'
                     }`}
                   />
@@ -484,10 +484,10 @@ export default function App() {
                       key={tile.id}
                       type="button"
                       onClick={() => setActiveIntent(tile.id)}
-                      className={`h-[92px] sm:h-[104px] px-4 rounded-2xl border text-center flex flex-col items-center justify-center transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F766E] ${
+                      className={`h-[92px] sm:h-[104px] px-4 rounded-2xl border text-center flex flex-col items-center justify-center transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#004B93] ${
                         isActive
-                          ? 'bg-[#134E4A] border-[#134E4A] text-white shadow-sm'
-                          : 'bg-[#E6F4F1] border-[#CBE7E1] text-[#134E4A] hover:bg-[#D5EFE9] hover:border-[#0F766E]/50'
+                          ? 'bg-[#004B93] border-[#004B93] text-white shadow-sm'
+                          : 'bg-[#EBF3FB] border-[#C7DCF2] text-[#003876] hover:bg-[#DCEAF8] hover:border-[#004B93]/50'
                       }`}
                     >
                       <span className="text-xs sm:text-sm font-extrabold tracking-wide leading-tight">
@@ -495,7 +495,7 @@ export default function App() {
                       </span>
                       <span
                         className={`text-[11px] mt-1 font-medium ${
-                          isActive ? 'text-[#99F6E4]' : 'text-[#3F6B66]'
+                          isActive ? 'text-[#BFDBFE]' : 'text-[#3B5F8A]'
                         }`}
                       >
                         {tile.sublabel}
@@ -624,8 +624,8 @@ export default function App() {
               setIsDigitalClub((prev) => {
                 showToast(
                   prev
-                    ? 'Lane Plus trial paused'
-                    : 'Lane Plus activated — $0 delivery enabled!'
+                    ? 'Digital Club trial paused'
+                    : 'Digital Club activated — $0 delivery enabled!'
                 );
                 return !prev;
               });
@@ -758,7 +758,7 @@ export default function App() {
         }}
       />
 
-      {/* Account & Lane Points Modal */}
+      {/* Account & Linkpoints Modal */}
       <AccountModal
         open={accountModalOpen}
         onClose={() => setAccountModalOpen(false)}
@@ -768,7 +768,7 @@ export default function App() {
         isDigitalClub={isDigitalClub}
         onToggleDigitalClub={() => {
           setIsDigitalClub((prev) => {
-            showToast(prev ? 'Lane Plus paused' : 'Lane Plus 30-day free trial activated!');
+            showToast(prev ? 'Digital Club paused' : 'Digital Club 30-day free trial activated!');
             return !prev;
           });
         }}
@@ -780,7 +780,7 @@ export default function App() {
         <div
           role="status"
           aria-live="polite"
-          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-lg bg-[#134E4A] text-white text-xs font-bold shadow-xl flex items-center gap-2 whitespace-nowrap max-w-[92vw] truncate"
+          className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-lg bg-[#003876] text-white text-xs font-bold shadow-xl flex items-center gap-2 whitespace-nowrap max-w-[92vw] truncate"
         >
           <span>{toastMessage}</span>
         </div>

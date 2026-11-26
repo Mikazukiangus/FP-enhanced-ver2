@@ -135,7 +135,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
         <button
           type="button"
           onClick={() => onNavigate('home', null)}
-          className="flex items-center gap-1 hover:text-[#0F766E] font-medium"
+          className="flex items-center gap-1 hover:text-[#004B93] font-medium"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Home</span>
@@ -150,7 +150,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
           <div className="bg-white rounded-xl border border-[#E5E8EE] p-4 space-y-4">
             <div className="flex items-center justify-between">
               <h2 className="text-sm font-extrabold text-[#1A1D23] flex items-center gap-2">
-                <SlidersHorizontal className="w-4 h-4 text-[#0F766E]" />
+                <SlidersHorizontal className="w-4 h-4 text-[#004B93]" />
                 <span>Refine Results</span>
               </h2>
               {(selectedDietary.length > 0 || promoOnly || selectedBrand !== 'ALL' || highlightFilter !== 'all') && (
@@ -162,7 +162,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                     setPromoOnly(false);
                     setSelectedBrand('ALL');
                   }}
-                  className="text-xs font-semibold text-[#0F766E] hover:underline"
+                  className="text-xs font-semibold text-[#004B93] hover:underline"
                 >
                   Reset
                 </button>
@@ -182,7 +182,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                     onClick={() => onNavigate('category', cat.id)}
                     className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       categoryId === cat.id && mode === 'category'
-                        ? 'bg-[#F0FDFA] text-[#0F766E] font-bold'
+                        ? 'bg-[#EFF5FC] text-[#004B93] font-bold'
                         : 'text-[#374151] hover:bg-[#F5F7FA]'
                     }`}
                   >
@@ -204,7 +204,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                       type="checkbox"
                       checked={selectedDietary.includes(tag)}
                       onChange={() => toggleDietary(tag)}
-                      className="w-3.5 h-3.5 accent-[#0F766E]"
+                      className="w-3.5 h-3.5 accent-[#004B93]"
                     />
                     <span>{tag}</span>
                   </label>
@@ -220,7 +220,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                   type="checkbox"
                   checked={promoOnly}
                   onChange={(e) => setPromoOnly(e.target.checked)}
-                  className="w-4 h-4 accent-[#0F766E]"
+                  className="w-4 h-4 accent-[#004B93]"
                 />
               </label>
             </div>
@@ -234,7 +234,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                 <select
                   value={selectedBrand}
                   onChange={(e) => setSelectedBrand(e.target.value)}
-                  className="w-full h-9 px-2.5 rounded-lg border border-[#D1D5DB] text-xs bg-white outline-none focus:border-[#0F766E]"
+                  className="w-full h-9 px-2.5 rounded-lg border border-[#D1D5DB] text-xs bg-white outline-none focus:border-[#004B93]"
                 >
                   <option value="ALL">All Brands</option>
                   {brands.map((b) => (
@@ -264,7 +264,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                   aria-label="Sort products"
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as typeof sortBy)}
-                  className="h-9 px-2.5 rounded-lg border border-[#D1D5DB] text-xs font-semibold text-[#1A1D23] bg-white outline-none focus:border-[#0F766E]"
+                  className="h-9 px-2.5 rounded-lg border border-[#D1D5DB] text-xs font-semibold text-[#1A1D23] bg-white outline-none focus:border-[#004B93]"
                 >
                   <option value="relevance">Sort: Relevance</option>
                   <option value="rating">Sort: Top Rated</option>
@@ -290,8 +290,8 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                   onClick={() => setHighlightFilter(btn.id as typeof highlightFilter)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-colors whitespace-nowrap shrink-0 ${
                     highlightFilter === btn.id
-                      ? 'bg-[#0F766E] text-white'
-                      : 'bg-[#F3F5F8] text-[#374151] hover:bg-[#E6FAF6] hover:text-[#0F766E]'
+                      ? 'bg-[#004B93] text-white'
+                      : 'bg-[#F3F5F8] text-[#374151] hover:bg-[#EBF3FB] hover:text-[#004B93]'
                   }`}
                 >
                   {btn.label}
@@ -311,7 +311,7 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
               <button
                 type="button"
                 onClick={() => onNavigate('home', null)}
-                className="mt-4 px-5 py-2.5 rounded-lg bg-[#0F766E] hover:bg-[#134E4A] text-white text-xs font-bold"
+                className="mt-4 px-5 py-2.5 rounded-lg bg-[#004B93] hover:bg-[#003876] text-white text-xs font-bold"
               >
                 Back to Homepage
               </button>
@@ -357,25 +357,25 @@ export const DigitalClubView: React.FC<DigitalClubViewProps> = ({
         <button
           type="button"
           onClick={() => onNavigate('home', null)}
-          className="flex items-center gap-1 hover:text-[#0F766E] font-medium"
+          className="flex items-center gap-1 hover:text-[#004B93] font-medium"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Home</span>
         </button>
         <span aria-hidden="true">/</span>
-        <span className="font-semibold text-[#1A1D23]">Lane Plus &amp; Lane Rewards</span>
+        <span className="font-semibold text-[#1A1D23]">Digital Club &amp; Link Rewards</span>
       </div>
 
-      <div className="bg-gradient-to-br from-[#134E4A] via-[#0F766E] to-[#0F766E] rounded-2xl p-8 lg:p-10 text-white grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <div className="bg-gradient-to-br from-[#003876] via-[#004B93] to-[#0056A8] rounded-2xl p-8 lg:p-10 text-white grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7">
-          <div className="text-xs font-bold text-[#5EEAD4]">
-            Pantry Lane · Lane Plus Membership
+          <div className="text-xs font-bold text-[#93C5FD]">
+            FairPrice · Digital Club Membership
           </div>
           <h1 className="text-3xl lg:text-4xl font-extrabold mt-2 leading-tight text-balance">
-            Unlimited $0 Delivery &amp; 2x Lane Points Every Month
+            Unlimited $0 Delivery &amp; 2x Linkpoints Every Month
           </h1>
           <p className="text-sm text-white/85 mt-3 max-w-xl leading-relaxed">
-            Save more every time you shop groceries online. Enjoy free delivery on all orders with no minimum spend, bonus Lane Points, and member-only monthly vouchers from $9.99/month.
+            Save more every time you shop groceries online. Enjoy free delivery on all orders with no minimum spend, bonus Linkpoints, and member-only monthly vouchers from $9.99/month.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -385,10 +385,10 @@ export const DigitalClubView: React.FC<DigitalClubViewProps> = ({
               className={`px-6 py-3 rounded-lg text-sm font-bold transition-colors ${
                 isDigitalClub
                   ? 'bg-[#ECFDF3] text-[#15803D]'
-                  : 'bg-[#EA580C] hover:bg-[#C2410C] text-white'
+                  : 'bg-[#E31837] hover:bg-[#C4122D] text-white'
               }`}
             >
-              {isDigitalClub ? 'Lane Plus Active (Click to Manage)' : 'Start 30-Day Free Trial'}
+              {isDigitalClub ? 'Digital Club Active (Click to Manage)' : 'Start 30-Day Free Trial'}
             </button>
             <button
               type="button"
@@ -405,11 +405,11 @@ export const DigitalClubView: React.FC<DigitalClubViewProps> = ({
           <ul className="space-y-3 text-sm">
             {[
               { icon: Truck, title: '$0 Delivery Fee', sub: 'Unlimited free delivery on every grocery order' },
-              { icon: Award, title: '2x Bonus Lane Points', sub: 'Earn double Lane Points on Pantry Lane Online' },
+              { icon: Award, title: '2x Bonus Linkpoints', sub: 'Earn double Linkpoints on FairPrice Online' },
               { icon: Sparkles, title: 'Exclusive Monthly Vouchers', sub: 'Up to $24 in bonus monthly store & online vouchers' },
             ].map((perk) => (
               <li key={perk.title} className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#F0FDFA] text-[#0F766E] flex items-center justify-center shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#EFF5FC] text-[#004B93] flex items-center justify-center shrink-0">
                   <perk.icon className="w-4 h-4" />
                 </div>
                 <div>
