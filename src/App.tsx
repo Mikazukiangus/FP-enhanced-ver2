@@ -579,25 +579,6 @@ export default function App() {
                 />
               )}
             </section>
-
-            {/* 6. ONE CLEAN CONSOLIDATED CATALOG (Replaces 4+ Redundant Homepage Carousels) */}
-            {(activeIntent === 'meal-planner' || activeIntent === 'vouchers') && (
-              <section aria-label="Browse Everyday Groceries" className="pt-4 border-t border-[#E5E8EE]">
-                <ConsolidatedProductGrid
-                  title="Everyday Essentials"
-                  subtitle="Bestsellers, top-rated picks, and dietary favourites consolidated into one filterable aisle"
-                  products={PRODUCTS}
-                  cart={cart}
-                  wishlist={wishlist}
-                  pantryIds={pantryIds}
-                  defaultFilter="bestsellers"
-                  onAdd={handleAddToCart}
-                  onUpdateQty={handleUpdateQty}
-                  onToggleWishlist={handleToggleWishlist}
-                  onOpenDetail={setSelectedProduct}
-                />
-              </section>
-            )}
           </div>
         )}
 

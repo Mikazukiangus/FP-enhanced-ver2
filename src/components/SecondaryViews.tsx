@@ -57,7 +57,9 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
   const baseProducts = useMemo(() => {
     let list = [...PRODUCTS];
     if (mode === 'category' && activeCategoryObj) {
-      if (activeCategoryObj.filterType === 'dietary' && activeCategoryObj.dietaryTag) {
+      if (activeCategoryObj.filterType === 'all') {
+        // Show all everyday essentials across aisles
+      } else if (activeCategoryObj.filterType === 'dietary' && activeCategoryObj.dietaryTag) {
         list = list.filter((p) => p.dietary.includes(activeCategoryObj.dietaryTag!));
       } else {
         list = list.filter((p) => p.category === activeCategoryObj.id);
@@ -175,6 +177,17 @@ export const CatalogView: React.FC<CatalogViewProps> = ({
                 Aisles
               </h3>
               <div className="space-y-1">
+                <button
+                  type="button"
+                  onClick={() => onNavigate('category', 'everyday-essentials')}
+                  className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                    categoryId === 'everyday-essentials' && mode === 'category'
+                      ? 'bg-[#EFF5FC] text-[#004B93] font-bold'
+                      : 'text-[#374151] hover:bg-[#F5F7FA]'
+                  }`}
+                >
+                  Everyday Essentials
+                </button>
                 {CATEGORIES.map((cat) => (
                   <button
                     key={cat.id}

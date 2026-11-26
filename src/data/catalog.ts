@@ -6,7 +6,7 @@ export interface Category {
   accentBg: string;
   accentText: string;
   iconKey: string;
-  filterType?: 'category' | 'dietary';
+  filterType?: 'category' | 'dietary' | 'all';
   dietaryTag?: 'Halal' | 'Organic' | 'Healthier Choice';
 }
 
@@ -144,6 +144,16 @@ export const IMAGES = {
 };
 
 export const TOP_CATEGORIES: Category[] = [
+  {
+    id: 'everyday-essentials',
+    name: 'Everyday Essentials',
+    shortName: 'Everyday Essentials',
+    subcategories: ['Bestsellers', 'Top Rated', 'Recommended', 'Bundle Deals'],
+    accentBg: 'bg-[#EFF5FC]',
+    accentText: 'text-[#004B93]',
+    iconKey: 'shopping-bag',
+    filterType: 'all',
+  },
   {
     id: 'halal-filter',
     name: 'Halal Certified',

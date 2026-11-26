@@ -9,6 +9,7 @@ import {
   Leaf,
   Milk,
   ShieldCheck,
+  ShoppingBag,
   Sparkles,
   Tag,
   Wheat,
@@ -17,6 +18,7 @@ import {
 import { Category, TOP_CATEGORIES } from '../data/catalog';
 
 const CATEGORY_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
+  'shopping-bag': ShoppingBag,
   shield: ShieldCheck,
   leaf: Leaf,
   wine: Wine,
